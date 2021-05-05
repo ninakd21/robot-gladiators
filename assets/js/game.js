@@ -7,6 +7,7 @@ var enemyNames = ['Roborto', 'Amy Android', 'Robo Trumble'];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
+
 // fight function (now with parameter for enemy's name)
 var fight = function(enemyName) {
   while (playerHealth > 0 && enemyHealth > 0) {
@@ -23,7 +24,7 @@ var fight = function(enemyName) {
         window.alert(playerName + ' has decided to skip this fight. Goodbye!');
         // subtract money from playerMoney for skipping
         playerMoney = playerMoney - 10;
-        console.log("playerMoney", playerMoney)
+        console.log("playerMoney", playerMoney);
         break;
       }
     }
@@ -189,3 +190,4 @@ var shop = function() {
 };
 // start first game when page loads
 startGame();
+
