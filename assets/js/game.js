@@ -7,42 +7,6 @@ var randomNumber = function(min, max) {
   return value;
 };
 
-<<<<<<< HEAD
-=======
-// function to check if player wants to fight or skip
-var fightOrSkip = function() {
-  // ask player if they'd like to fight or run
-  var promptFight = window.prompt('Would you like to FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
-
-  // validate prompt answer
-  if (promptFight === "" || promptFight === null) {
-    window.alert("You need to provide a valid answer! Please try again.");
-    // use return to call it again and stop the rest of this function from running
-    return fightOrSkip();
-  }
-
-  // convert promptFight to all lowercase so we can check with less options
-  promptFight = promptFight.toLowerCase();
-
-  if (promptFight === "skip") {
-    // confirm player wants to skip
-    var confirmSkip = window.confirm("Are you sure you'd like to quit?");
-
-    // if yes (true), leave fight
-    if (confirmSkip) {
-      window.alert(playerInfo.name + " has decided to skip this fight. Goodbye!");
-      // subtract money from playerMoney for skipping, but don't let them go into the negative
-      playerInfo.money = Math.max(0, playerInfo.money - 10);
-      // stop while() loop using break; and enter next fight
-
-      // return true if player wants to leave
-      return true;
-    }
-  }
-  return false;
-};
-
->>>>>>> develope
 // fight function (now with parameter for enemy's object holding name, health, and attack values)
 var fight = function(enemy) {
   // keep track of who goes first
@@ -54,7 +18,6 @@ var fight = function(enemy) {
   }
 
   while (playerInfo.health > 0 && enemy.health > 0) {
-<<<<<<< HEAD
     // ask player if they'd like to fight or run
     var promptFight = window.prompt('Would you like to FIGHT or SKIP this battle? Enter "FIGHT" or "SKIP" to choose.');
 
@@ -80,14 +43,6 @@ var fight = function(enemy) {
     console.log(
       playerInfo.name + ' attacked ' + enemy.name + '. ' + enemy.name + ' now has ' + enemy.health + ' health remaining.'
     );
-=======
-    if (isPlayerTurn) {
-      // ask player if they'd like to fight or skip using fightOrSkip function
-      if (fightOrSkip()) {
-        // if true, leave fight by breaking loop
-        break;
-      }
->>>>>>> develope
 
       var damage = randomNumber(playerInfo.attack - 3, playerInfo.attack);
 
@@ -108,7 +63,6 @@ var fight = function(enemy) {
       if (enemy.health <= 0) {
         window.alert(enemy.name + " has died!");
 
-<<<<<<< HEAD
     // remove players's health by subtracting the amount set in the enemy.attack variable
     var damage = randomNumber(enemy.attack - 3, enemy.attack);
 
@@ -123,17 +77,6 @@ var fight = function(enemy) {
       window.alert(playerInfo.name + ' has died!');
       // leave while() loop if player is dead
       break;
-=======
-        // award player money for winning
-        playerInfo.money = playerInfo.money + 20;
-
-        // leave while() loop since enemy is dead
-        break;
-      } else {
-        window.alert(enemy.name + " still has " + enemy.health + " health left.");
-      }
-      // player gets attacked first
->>>>>>> develope
     } else {
       var damage = randomNumber(enemy.attack - 3, enemy.attack);
 
@@ -171,14 +114,7 @@ var startGame = function() {
 
   // fight each enemy robot by looping over them and fighting them one at a time
   for (var i = 0; i < enemyInfo.length; i++) {
-<<<<<<< HEAD
     // if player is still alive, keep fight next enemy
-=======
-    // check player stats
-    console.log(playerInfo);
-
-    // if player is still alive, keep fighting
->>>>>>> develope
     if (playerInfo.health > 0) {
       // let player know what round they are in, remember that arrays start at 0 so it needs to have 1 added to it
       window.alert("Welcome to Robot Gladiators! Round " + (i + 1));
@@ -189,11 +125,6 @@ var startGame = function() {
       // set health for picked enemy
       pickedEnemyObj.health = randomNumber(40, 60);
 
-<<<<<<< HEAD
-=======
-      console.log(pickedEnemyObj);
-
->>>>>>> develope
       // pass the pickedEnemyObj object variable's value into the fight function, where it will assume the value of the enemy parameter
       fight(pickedEnemyObj);
 
@@ -261,19 +192,12 @@ var shop = function() {
 
   // use switch case to carry out action
   switch (shopOptionPrompt) {
-<<<<<<< HEAD
     case 'REFILL':
     case 'refill':
       playerInfo.refillHealth();
       break;
     case 'UPGRADE':
     case 'upgrade':
-=======
-    case 1:
-      playerInfo.refillHealth();
-      break;
-    case 2:
->>>>>>> develope
       playerInfo.upgradeAttack();
       break;
     case 3:
@@ -286,8 +210,6 @@ var shop = function() {
   }
 };
 
-<<<<<<< HEAD
-=======
 // function to set name
 var getPlayerName = function() {
   var name = "";
@@ -299,15 +221,11 @@ var getPlayerName = function() {
   return name;
 };
 
->>>>>>> develope
 /* END GAME FUNCTIONS */
 
 /* GAME INFORMATION / VARIABLES */
 
-<<<<<<< HEAD
 // player information
-=======
->>>>>>> develope
 var playerInfo = {
   name: getPlayerName(),
   health: 100,
@@ -353,14 +271,11 @@ var enemyInfo = [
     attack: randomNumber(10, 14)
   }
 ];
-<<<<<<< HEAD
 
 console.log(enemyInfo);
 console.log(enemyInfo[0]);
 console.log(enemyInfo[0].name);
 console.log(enemyInfo[0]['attack']);
-=======
->>>>>>> develope
 
 /* END GAME INFORMATION / VARIABLES */
 
